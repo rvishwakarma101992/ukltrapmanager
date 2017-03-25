@@ -1,0 +1,787 @@
+<div 
+	ng-show="page_meta_data.has_header" 
+	ng-include="'common_things/template_page_header.html'"
+></div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-9">
+			<form name="form_add_trap"><div class="ibox">
+
+					<div class="ibox-title">
+						<h5>Rectification
+							<small></small>
+						</h5>
+
+						<div ibox-tools></div>
+					</div>
+					<div class="ibox-content">
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="rectification_date">Rectification Date :</label>
+								<div 
+									  class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									  ng-show="form_add_trap.rectification_date.$valid && form_add_trap.rectification_date.$dirty"
+								></div>
+								<div 
+									 class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									 ng-show="form_add_trap.rectification_date.$invalid && form_add_trap.rectification_date.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="email"  -->
+									<!-- type="number"  -->
+									
+								<input 
+									class="form-control" 
+									type="text" 
+									name="rectification_date"
+									ng-model="rectification_list.rectification_date"
+									placeholder="Enter Rectification Date"
+									required
+									id="rectification_date"
+								>
+								<div 
+									ng-show="form_add_trap.rectification_date.$error.required && form_add_trap.rectification_date.$dirty"
+									class="alert alert-danger"
+								>
+									Rectification Date is required
+								</div>
+								<div 
+									ng-show="form_add_trap.rectification_date.$invalid && form_add_trap.rectification_date.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Rectification Date
+								</div>
+							</div>
+						</div>
+						
+
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="rectification_activity">Rectification Activity :</label>
+								<div 
+									  class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									  ng-show="form_add_trap.rectification_activity.$valid && form_add_trap.rectification_activity.$dirty"
+								></div>
+								<div 
+									 class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									 ng-show="form_add_trap.rectification_activity.$invalid && form_add_trap.rectification_activity.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="rectification_activity"
+									ng-model="rectification_list.rectification_activity"
+									placeholder="Enter Rectification Activity"
+									required
+								>
+								<div 
+									ng-show="form_add_trap.rectification_activity.$error.required && form_add_trap.rectification_activity.$dirty"
+									class="alert alert-danger"
+								>
+									Rectification Activity is required
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="post_rectification_status">Post Rectification Status :</label>
+								<div 
+									  class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									  ng-show="form_add_trap.post_rectification_status.$valid && form_add_trap.post_rectification_status.$dirty"
+								></div>
+								<div 
+									 class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									 ng-show="form_add_trap.post_rectification_status.$invalid && form_add_trap.post_rectification_status.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="post_rectification_status"
+									ng-model="rectification_list.rectification_status"
+									placeholder="Enter Post Rectification Status"
+									required
+								>
+								<div 
+									ng-show="form_add_trap.post_rectification_status.$error.required && form_add_trap.post_rectification_status.$dirty"
+									class="alert alert-danger"
+								>
+									Post Rectification Status is required
+								</div>
+							</div>
+						</div>
+						
+						
+
+						<div class="row" align="center">
+							<button 
+								type="button" 
+								class="btn btn-w-m btn-success"
+								ng-click="update_rectification(object_for_edit._id,rectification_list)"
+							>Save</button>
+								<!-- ng-disabled="form_add_trap.$invalid" -->
+							<button 
+								type="button" 
+								class="btn btn-w-m btn-primary"
+								ng-click="reset_form()"
+							>Reset</button>
+						</div>
+
+					</div>
+				</div>
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>Trap Details
+							<small></small>
+						</h5>
+
+						<div ibox-tools></div>
+					</div>
+				
+				
+					<div class="ibox-content">
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="tag_number">Tag Number </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.tag_number.$valid && form_add_trap.tag_number.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.tag_number.$invalid && form_add_trap.tag_number.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="text"
+									name="tag_number"
+									ng-model="object_for_edit.tag_number"
+									placeholder="Enter Tag Number"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.tag_number.$error.required && form_add_trap.tag_number.$dirty"
+									class="alert alert-danger"
+								>
+									Tag Number is required
+								</div>
+								<div 
+									ng-show="form_add_trap.tag_number.$invalid && form_add_trap.tag_number.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Tag Number
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="form-group row" align="center">
+							<button 
+								type="button" 
+								class="btn btn-w-m btn-success"
+								ng-click="get_trap_by_tag_number(object_for_edit.tag_number)"
+							>Search Tag</button>
+						</div> -->
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="customer_name">Customer Name </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.customer_name.$valid && form_add_trap.customer_name.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.customer_name.$invalid && form_add_trap.customer_name.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="customer_name"
+									ng-model="object_for_edit.customer_name"
+									placeholder="Customer Name"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.customer_name.$error.required && form_add_trap.customer_name.$dirty"
+									class="alert alert-danger"
+								>
+									Customer Name is required
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="unit">Unit </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.unit.$valid && form_add_trap.unit.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.unit.$invalid && form_add_trap.unit.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="text" 
+									name="unit"
+									ng-model="object_for_edit.unit"
+									placeholder="Unit"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.unit.$error.required && form_add_trap.unit.$dirty"
+									class="alert alert-danger"
+								>
+									Unit is required
+								</div>
+								<div 
+									ng-show="form_add_trap.unit.$invalid && form_add_trap.unit.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Unit
+								</div>
+							</div>
+						</div>
+
+
+						
+						
+						
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="area">Area / Location </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.area.$valid && form_add_trap.area.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.area.$invalid && form_add_trap.area.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="area"
+									ng-model="object_for_edit.area"
+									placeholder="Area / Location"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.area.$error.required && form_add_trap.area.$dirty"
+									class="alert alert-danger"
+								>
+									Area / Location is required
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="make_of_trap">Make of Trap </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.make_of_trap.$valid && form_add_trap.make_of_trap.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.make_of_trap.$invalid && form_add_trap.make_of_trap.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="make_of_trap"
+									ng-model="object_for_edit.make_of_trap"
+									placeholder="Make of Trap"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.make_of_trap.$error.required && form_add_trap.make_of_trap.$dirty"
+									class="alert alert-danger"
+								>
+									Make of Trap is required
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="model_number">Model Number </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.model_number.$valid && form_add_trap.model_number.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.model_number.$invalid && form_add_trap.model_number.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="text" 
+									name="model_number"
+									ng-model="object_for_edit.model_number"
+									placeholder="Model Number"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.model_number.$error.required && form_add_trap.model_number.$dirty"
+									class="alert alert-danger"
+								>
+									Model Number is required
+								</div>
+								<div 
+									ng-show="form_add_trap.model_number.$invalid && form_add_trap.model_number.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Model Number
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="size_nb">Size (NB) </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.size_nb.$valid && form_add_trap.size_nb.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.size_nb.$invalid && form_add_trap.size_nb.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="number" 
+									name="size_nb"
+									ng-model="object_for_edit.size_nb"
+									placeholder="Size (NB)"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.size_nb.$error.required && form_add_trap.size_nb.$dirty"
+									class="alert alert-danger"
+								>
+									Size (NB) is required
+								</div>
+								<div 
+									ng-show="form_add_trap.size_nb.$invalid && form_add_trap.size_nb.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Size (NB)
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="inlet_pressure_in_bar">Inlet Pressure (bar) </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.inlet_pressure_in_bar.$valid && form_add_trap.inlet_pressure_in_bar.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.inlet_pressure_in_bar.$invalid && form_add_trap.inlet_pressure_in_bar.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="number" 
+									name="inlet_pressure_in_bar"
+									ng-model="object_for_edit.inlet_pressure_in_bar"
+									placeholder="Inlet Pressure (bar)"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.inlet_pressure_in_bar.$error.required && form_add_trap.inlet_pressure_in_bar.$dirty"
+									class="alert alert-danger"
+								>
+									Inlet Pressure (bar) is required
+								</div>
+								<div 
+									ng-show="form_add_trap.inlet_pressure_in_bar.$invalid && form_add_trap.inlet_pressure_in_bar.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Inlet Pressure (bar)
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="outlet_pressure_in_bar">Outlet Pressure (bar) </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.outlet_pressure_in_bar.$valid && form_add_trap.outlet_pressure_in_bar.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.outlet_pressure_in_bar.$invalid && form_add_trap.outlet_pressure_in_bar.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="number" 
+									name="outlet_pressure_in_bar"
+									ng-model="object_for_edit.outlet_pressure_in_bar"
+									placeholder="Outlet Pressure (bar)"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.outlet_pressure_in_bar.$error.required && form_add_trap.outlet_pressure_in_bar.$dirty"
+									class="alert alert-danger"
+								>
+									Outlet Pressure (bar) is required
+								</div>
+								<div 
+									ng-show="form_add_trap.outlet_pressure_in_bar.$invalid && form_add_trap.outlet_pressure_in_bar.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Outlet Pressure (bar)
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="bypass_open_close">Bypass open/close </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.bypass_open_close.$valid && form_add_trap.bypass_open_close.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.bypass_open_close.$invalid && form_add_trap.bypass_open_close.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="bypass_open_close"
+									ng-model="object_for_edit.bypass_open_close"
+									placeholder="Bypass open/close"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.bypass_open_close.$error.required && form_add_trap.bypass_open_close.$dirty"
+									class="alert alert-danger"
+								>
+									Bypass open/close is required
+								</div>
+							</div>
+						</div>
+						
+
+						
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="type">Type </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.type.$valid && form_add_trap.type.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.type.$invalid && form_add_trap.type.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="type"
+									ng-model="object_for_edit.type"
+									placeholder="Type"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.type.$error.required && form_add_trap.type.$dirty"
+									class="alert alert-danger"
+								>
+									Type is required
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="connection">Connection </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.connection.$valid && form_add_trap.connection.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.connection.$invalid && form_add_trap.connection.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="connection"
+									ng-model="object_for_edit.connection"
+									placeholder="Connection"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.connection.$error.required && form_add_trap.connection.$dirty"
+									class="alert alert-danger"
+								>
+									Connection is required
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="in_temp_read">In Temp Read </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.in_temp_read.$valid && form_add_trap.in_temp_read.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.in_temp_read.$invalid && form_add_trap.in_temp_read.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="number" 
+									name="in_temp_read"
+									ng-model="object_for_edit.in_temp_read"
+									placeholder="In Temp Read"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.in_temp_read.$error.required && form_add_trap.in_temp_read.$dirty"
+									class="alert alert-danger"
+								>
+									In Temp Read is required
+								</div>
+								<div 
+									ng-show="form_add_trap.in_temp_read.$invalid && form_add_trap.in_temp_read.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid In Temp Read
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="out_temp_read">Out Temp Read </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.out_temp_read.$valid && form_add_trap.out_temp_read.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.out_temp_read.$invalid && form_add_trap.out_temp_read.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="date"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="number" 
+									name="out_temp_read"
+									ng-model="object_for_edit.out_temp_read"
+									placeholder="Out Temp Read"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.out_temp_read.$error.required && form_add_trap.out_temp_read.$dirty"
+									class="alert alert-danger"
+								>
+									Out Temp Read is required
+								</div>
+								<div 
+									ng-show="form_add_trap.out_temp_read.$invalid && form_add_trap.out_temp_read.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Out Temp Read
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="bypass_exists">Bypass Exists </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.bypass_exists.$valid && form_add_trap.bypass_exists.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.bypass_exists.$invalid && form_add_trap.bypass_exists.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="bypass_exists"
+									ng-model="object_for_edit.bypass_exists"
+									placeholder="Bypass Exists"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.bypass_exists.$error.required && form_add_trap.bypass_exists.$dirty"
+									class="alert alert-danger"
+								>
+									Bypass Exists is required
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="application">Application </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.application.$valid && form_add_trap.application.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.application.$invalid && form_add_trap.application.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+								<input 
+									class="form-control" 
+									type="text" 
+									name="application"
+									ng-model="object_for_edit.application"
+									placeholder="Application"
+									required
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.application.$error.required && form_add_trap.application.$dirty"
+									class="alert alert-danger"
+								>
+									Application is required
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="audit_date">Audit Date </label>
+								<div 
+									class="text-success glyphicon glyphicon-ok form-control-feedback" 
+									ng-show="form_add_trap.audit_date.$valid && form_add_trap.audit_date.$dirty"
+								></div>
+								<div 
+									class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+									ng-show="form_add_trap.audit_date.$invalid && form_add_trap.audit_date.$dirty"
+								></div> 
+							</div>
+							<div class="col-md-8">
+									<!-- type="number"  -->
+									<!-- type="email"  -->
+								<input 
+									class="form-control" 
+									type="text" 
+									name="audit_date"
+									ng-model="object_for_edit.audit_date"
+									placeholder="Audit Date"
+									required
+									id="audit_date"
+									ng-disabled="true"
+								>
+								<div 
+									ng-show="form_add_trap.audit_date.$error.required && form_add_trap.audit_date.$dirty"
+									class="alert alert-danger"
+								>
+									Audit Date is required
+								</div>
+								<div 
+									ng-show="form_add_trap.audit_date.$invalid && form_add_trap.audit_date.$dirty"
+									class="alert alert-danger"
+								>
+									Enter Valid Audit Date
+								</div>
+							</div>
+						</div>
+					</div>    
+
+					
+				</div>
+
+			</form>
+		</div>
+		
+	</div>
+</div>
+

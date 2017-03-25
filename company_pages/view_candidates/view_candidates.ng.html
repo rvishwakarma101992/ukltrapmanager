@@ -1,0 +1,151 @@
+
+<div 
+	ng-show="page_meta_data.has_header" 
+	ng-include="'common_things/template_page_header.html'"
+></div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<input class="form-control" type="text" ng-model="search_text" placeholder="Search Here">
+	<br>
+	<div ng-repeat="each_candidate in list_all_candidates | filter:search_text">
+		<!-- <pre>{{each_candidate | json}}</pre> -->
+		<div class="contact-box">
+	        <a ui-sref="profile">
+	            <div class="col-sm-4">
+	                <div class="text-center">
+	                    <img alt="image" class="img-circle m-t-xs img-responsive" src="img/img_avatar1.png">
+
+	                    <!-- <div class="m-t-xs font-bold">Graphics designer</div> -->
+	                </div>
+	            </div>
+	            <div class="col-sm-8">
+	                <p>
+						<b>Candidate Name</b> : 
+						{{each_candidate.candidate.first_name}} 
+						{{each_candidate.candidate.middle_name}} 
+						{{each_candidate.candidate.last_name}} 
+					</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Gender :</b> {{each_candidate.gender}}
+							</div>
+							<div class="col-md-4">
+								<b>Cast :</b> {{each_candidate.candidate_cast}}
+							</div>
+							<div class="col-md-4">
+							
+							</div>	
+						</div>
+					</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Birth Date :</b> {{each_candidate.date_of_birth | date:"MM/dd/yyyy"}}
+							</div>
+							<div class="col-md-4">
+								<b>Birth Time :</b> {{each_candidate.time_of_birth | date:"h:mma"}}
+							</div>
+							<div class="col-md-4">
+								<b>Birth Place :</b> {{each_candidate.birth_place}}
+							</div>	
+						</div>
+					</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Blood Group :</b> {{each_candidate.blood_group}}
+							</div>
+							<div class="col-md-4">
+								<b>Height : </b> 
+								{{each_candidate.height_foot}}' 
+								{{each_candidate.height_inches}}"
+							</div>
+							<div class="col-md-4">
+								<b>Color Tone :</b> {{each_candidate.color_tone}}
+							</div>	
+						</div>
+					</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Zodiac Sign :</b> {{each_candidate.zodiac}}
+							</div>
+							<div class="col-md-4">
+								<b>Gotra :</b> {{each_candidate.gotra}}
+							</div>
+							<div class="col-md-4">
+								
+							</div>	
+						</div>
+					</p>
+					<p><b>Education Details:</b> {{each_candidate.education}}</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Job Profile :</b> {{each_candidate.job_profile}}
+							</div>
+							<div class="col-md-4">
+								<b>Job Location :</b> {{each_candidate.address_job}}
+							</div>
+							<div class="col-md-4">
+								
+							</div>	
+						</div>
+					</p>
+					<p>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Mobile No :</b> {{each_candidate.mobile_no}}
+							</div>
+							<div class="col-md-4">
+								<b>Email Id :</b> {{each_candidate.email_id}}
+							</div>
+							<div class="col-md-4">
+								
+							</div>	
+						</div>
+					</p>
+					<p><b>Address(resi) :</b> {{each_candidate.address_residential}}</p>
+					<p>
+						<b>Gaurdian Name :</b> 
+						{{each_candidate.candidates_gaurdian.first_name}} {{each_candidate.candidates_gaurdian.middle_name}} {{each_candidate.candidates_gaurdian.last_name}} 
+					</p>
+					<p>
+						<b>Uncle Name:</b> 
+						{{each_candidate.candidates_uncle.first_name}} 
+						{{each_candidate.candidates_uncle.middle_name}} 
+						{{each_candidate.candidates_uncle.last_name}} 
+					</p>
+					<p><b>Expectations :</b> {{each_candidate.expectations}}</p>
+
+					<p>
+						<b>Preferences : </b> 
+						<span ng-repeat="each_preference in each_candidate.preferences">
+							<span ng-show="each_preference.state">{{each_preference.title}},</span>
+						</span>
+						candidates are ok.
+					</p>
+					<button 
+		                class="btn btn-primary btn-xs" 
+		                ng-click="edit_candidate(each_candidate)"
+		            >
+		                <span class="glyphicon glyphicon-pencil"></span>
+		            </button>
+	                <button 
+	                    class="btn btn-danger btn-xs" 
+	                    data-title="Delete" 
+	                    data-toggle="modal" 
+	                    data-target="#delete" 
+	                    ng-click="delete_candidate(each_candidate._id);"
+	                >
+	                    <span class="glyphicon glyphicon-trash"></span>
+	                </button>
+	            </div>
+	            <div class="clearfix"></div>
+	        </a>
+	    </div>
+		
+	</div>
+</div>
+

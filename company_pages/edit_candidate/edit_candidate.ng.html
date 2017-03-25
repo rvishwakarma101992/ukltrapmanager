@@ -1,0 +1,1204 @@
+<div
+	ng-show="page_meta_data.has_header"
+	ng-include="'common_things/template_page_header.html'"
+></div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<!-- <div class="ibox-title">
+					<h5>Table with data from $scope - <strong>(The angular way)</strong></h5>
+					<div ibox-tools></div>
+				</div> -->
+				<div class="ibox-content">
+					<form  name="form_vswf" novalidate="true" >
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="first_name">First Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.first_name.$valid && form_vswf.first_name.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.first_name.$invalid && form_vswf.first_name.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<input
+								class="form-control"
+								name="first_name"
+								ng-model="matrimony.candidate.first_name"
+								placeholder="Enter First Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.first_name.$error.required && form_vswf.first_name.$dirty"
+									class="alert alert-danger"
+									>
+									First Name is required
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="middlename">Middle Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.middlename.$valid && form_vswf.middlename.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.middlename.$invalid && form_vswf.middlename.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="middlename"
+								ng-model="matrimony.candidate.middle_name"
+								placeholder="Enter Middle Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.middlename.$error.required && form_vswf.middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Middle Name is required
+								</div>
+								<div
+									ng-show="form_vswf.middlename.$invalid && form_vswf.middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Middle Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="lastname">Last Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.lastname.$valid && form_vswf.lastname.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.lastname.$invalid && form_vswf.lastname.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="lastname"
+								ng-model="matrimony.candidate.last_name"
+								placeholder="Enter Last Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.lastname.$error.required && form_vswf.lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Last Name is required
+								</div>
+								<div
+									ng-show="form_vswf.lastname.$invalid && form_vswf.lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Last Name
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="candidate_cast">Your Cast :</label>
+								<div 
+								  	class="text-success glyphicon glyphicon-ok form-control-feedback" 
+								  	ng-show="matrimony.candidate_cast"
+								></div>
+								<div 
+								 	class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+								 	ng-show="!matrimony.candidate_cast && form_vswf.candidate_cast.$dirty"
+								></div>
+							</div>
+						
+							<div class="col-md-8">
+								<span class="radio-inline">
+									<label for="Sutar">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											value="Sutar" 
+											ng-model="matrimony.candidate_cast" 
+											required 
+										>Sutar
+									</label>
+								</span>
+						
+								<span class="radio-inline">
+									<label for="Sonar">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											value="Sonar" 
+											ng-model="matrimony.candidate_cast" 
+											required 
+										>Sonar
+									</label>
+								</span>
+						
+								<span class="radio-inline">
+									<label for="Lohar">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											value="Lohar" 
+											ng-model="matrimony.candidate_cast" 
+											required 
+										>Lohar
+									</label>
+								</span>
+						
+								<span class="radio-inline">
+									<label for="Shilpkar">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											value="Shilpkar" 
+											ng-model="matrimony.candidate_cast" 
+											required 
+										>Shilpkar
+									</label>
+								</span>
+						
+								<span class="radio-inline">
+									<label for="Tamrakar">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											value="Tamrakar" 
+											ng-model="matrimony.candidate_cast" 
+											required 
+										>Tamrakar
+									</label>
+								</span>
+						
+								<!-- <span class="radio-inline">
+									<label for="none">
+										<input 
+											type="radio" 
+											name="candidate_cast" 
+											ng-model="matrimony.candidate_cast" 
+										>none
+									</label>
+								</span> -->
+						
+								<div 
+								 	class="alert alert-danger" 
+								 	ng-show="form_vswf.candidate_cast.$error.required && form_vswf.candidate_cast.$dirty"
+								>
+									Your Cast is required.
+								</div>
+							</div>
+						</div>
+						
+
+
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="gender">Your Gender :</label>
+								<div 
+								  	class="text-success glyphicon glyphicon-ok form-control-feedback" 
+								  	ng-show="matrimony.gender"
+								></div>
+								<div 
+								 	class="text-danger glyphicon glyphicon-remove form-control-feedback" 
+								 	ng-show="!matrimony.gender && form_vswf.gender.$dirty"
+								></div>
+							</div>
+						
+							<div class="col-md-8">
+								<span class="radio-inline">
+									<label for="Male">
+										<input 
+											type="radio" 
+											name="gender" 
+											value="Male" 
+											ng-model="matrimony.gender" 
+											required 
+										>Male
+									</label>
+								</span>
+						
+								<span class="radio-inline">
+									<label for="Female">
+										<input 
+											type="radio" 
+											name="gender" 
+											value="Female" 
+											ng-model="matrimony.gender" 
+											required 
+										>Female
+									</label>
+								</span>
+						
+								<!-- <span class="radio-inline">
+									<label for="none">
+										<input 
+											type="radio" 
+											name="gender" 
+											ng-model="matrimony.gender" 
+										>none
+									</label>
+								</span> -->
+						
+								<div 
+								 	class="alert alert-danger" 
+								 	ng-show="form_vswf.gender.$error.required && form_vswf.gender.$dirty"
+								>
+									Your Gender is required.
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="date_of_birth">Birth Date :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.date_of_birth.$valid && form_vswf.date_of_birth.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.date_of_birth.$invalid && form_vswf.date_of_birth.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="number"  -->
+								<!-- type="email"  -->
+								<input
+								type="text"
+								class="form-control"
+								name="date_of_birth"
+								ng-model="matrimony.date_of_birth"
+								placeholder="Enter Birth Date"
+								required
+								id="birth_date"
+								>
+								<div
+									ng-show="form_vswf.date_of_birth.$error.required && form_vswf.date_of_birth.$dirty"
+									class="alert alert-danger"
+									>
+									Birth Date is required
+								</div>
+								<div
+									ng-show="form_vswf.date_of_birth.$invalid && form_vswf.date_of_birth.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Birth Date
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="tob">Birth Time :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.tob.$valid && form_vswf.tob.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.tob.$invalid && form_vswf.tob.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								type="text"
+								name="tob"
+								ng-model="matrimony.time_of_birth"
+								placeholder="Enter Birth Time"
+								required
+								id="birth_time"
+								>
+								<div
+									ng-show="form_vswf.tob.$error.required && form_vswf.tob.$dirty"
+									class="alert alert-danger"
+									>
+									Birth Time is required
+								</div>
+								<div
+									ng-show="form_vswf.tob.$invalid && form_vswf.tob.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Birth Time
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="birth_place">Birth place :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.birth_place.$valid && form_vswf.birth_place.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.birth_place.$invalid && form_vswf.birth_place.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="birth_place"
+								ng-model="matrimony.birth_place"
+								placeholder="Enter Birth place"
+								required
+								>
+								<div
+									ng-show="form_vswf.birth_place.$error.required && form_vswf.birth_place.$dirty"
+									class="alert alert-danger"
+									>
+									Birth place is required
+								</div>
+								<div
+									ng-show="form_vswf.birth_place.$invalid && form_vswf.birth_place.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Birth place
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="blood_group">Blood Group :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.blood_group.$valid && form_vswf.blood_group.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.blood_group.$invalid && form_vswf.blood_group.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<select
+									class="form-control"
+									name="blood_group"
+									ng-model="matrimony.blood_group"
+									placeholder="Enter Blood Group"
+									required
+									ng-options="each_blood_group for each_blood_group in list_blood_group"
+								></select>
+								<div
+									ng-show="form_vswf.blood_group.$error.required && form_vswf.blood_group.$dirty"
+									class="alert alert-danger"
+									>
+									Blood Group is required
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="height">height in foot:</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.height.$valid && form_vswf.height.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.height.$invalid && form_vswf.height.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<select
+									class="form-control"
+									name="height"
+									ng-model="matrimony.height_foot"
+									placeholder="Enter Height in foot"
+									required
+									ng-options="each_height_foot for each_height_foot in list_height_foot"
+								></select>
+								<div
+									ng-show="form_vswf.height.$error.required && form_vswf.height.$dirty"
+									class="alert alert-danger"
+									>
+									height is required
+								</div>
+								<div
+									ng-show="form_vswf.height.$invalid && form_vswf.height.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid height
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="height">height in inches:</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.height.$valid && form_vswf.height.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.height.$invalid && form_vswf.height.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<select
+									class="form-control"
+									name="height"
+									ng-model="matrimony.height_inches"
+									placeholder="Enter Height in foot"
+									required
+									ng-options="each_height_inches for each_height_inches in list_height_inches"
+								></select>
+								<div
+									ng-show="form_vswf.height.$error.required && form_vswf.height.$dirty"
+									class="alert alert-danger"
+									>
+									height is required
+								</div>
+								<div
+									ng-show="form_vswf.height.$invalid && form_vswf.height.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid height
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="zodiac">Zodiac Sign :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.zodiac.$valid && form_vswf.zodiac.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.zodiac.$invalid && form_vswf.zodiac.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<select
+									class="form-control"
+									name="zodiac"
+									ng-model="matrimony.zodiac"
+									placeholder="Enter Zodiac Sign"
+									required
+									ng-options="each_zodiac for each_zodiac in list_zodiac"
+								></select>
+								<div
+									ng-show="form_vswf.zodiac.$error.required && form_vswf.zodiac.$dirty"
+									class="alert alert-danger"
+									>
+									Zodiac Sign is required
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="color_tone">Color tone :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.color_tone.$valid && form_vswf.color_tone.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.color_tone.$invalid && form_vswf.color_tone.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<select
+									class="form-control"
+									name="color_tone"
+									ng-model="matrimony.color_tone"
+									placeholder="Enter Zodiac Sign"
+									required
+									ng-options="each_colors for each_colors in list_colors"
+								></select>
+								<div
+									ng-show="form_vswf.color_tone.$error.required && form_vswf.color_tone.$dirty"
+									class="alert alert-danger"
+									>
+									Color tone is required
+								</div>
+								<div
+									ng-show="form_vswf.color_tone.$invalid && form_vswf.color_tone.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Color tone
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="gotra">Gotra :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.gotra.$valid && form_vswf.gotra.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.gotra.$invalid && form_vswf.gotra.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="gotra"
+								ng-model="matrimony.gotra"
+								placeholder="Enter Gotra"
+								required
+								>
+								<div
+									ng-show="form_vswf.gotra.$error.required && form_vswf.gotra.$dirty"
+									class="alert alert-danger"
+									>
+									Gotra is required
+								</div>
+								<div
+									ng-show="form_vswf.gotra.$invalid && form_vswf.gotra.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Gotra
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="education">Education details :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.education.$valid && form_vswf.education.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.education.$invalid && form_vswf.education.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="education"
+								ng-model="matrimony.education"
+								placeholder="Enter Education details"
+								required
+								>
+								<div
+									ng-show="form_vswf.education.$error.required && form_vswf.education.$dirty"
+									class="alert alert-danger"
+									>
+									Education details is required
+								</div>
+								<div
+									ng-show="form_vswf.education.$invalid && form_vswf.education.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Education details
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="job_profile">Job profile :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.job_profile.$valid && form_vswf.job_profile.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.job_profile.$invalid && form_vswf.job_profile.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="job_profile"
+								ng-model="matrimony.job_profile"
+								placeholder="Enter Job profile"
+								required
+								>
+								<div
+									ng-show="form_vswf.job_profile.$error.required && form_vswf.job_profile.$dirty"
+									class="alert alert-danger"
+									>
+									Job profile is required
+								</div>
+								<div
+									ng-show="form_vswf.job_profile.$invalid && form_vswf.job_profile.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Job profile
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="address_job">Job location :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.address_job.$valid && form_vswf.address_job.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.address_job.$invalid && form_vswf.address_job.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<textarea
+								class="form-control"
+								name="address_job"
+								ng-model="matrimony.address_job"
+								placeholder="Enter Job location"
+								required
+								/>
+								<div
+									ng-show="form_vswf.address_job.$error.required && form_vswf.address_job.$dirty"
+									class="alert alert-danger"
+									>
+									Job location is required
+								</div>
+								<div
+									ng-show="form_vswf.address_job.$invalid && form_vswf.address_job.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Job location
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="mobile_no">Mobile no :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.mobile_no.$valid && form_vswf.mobile_no.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.mobile_no.$invalid && form_vswf.mobile_no.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="mobile_no"
+								ng-model="matrimony.mobile_no"
+								placeholder="Enter Mobile no"
+								required
+								data-ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/"
+								>
+								<div
+									ng-show="form_vswf.mobile_no.$error.required && form_vswf.mobile_no.$dirty"
+									class="alert alert-danger"
+									>
+									Mobile no is required
+								</div>
+								<div
+									ng-show="form_vswf.mobile_no.$invalid && form_vswf.mobile_no.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Mobile no
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="email_id">Email id :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.email_id.$valid && form_vswf.email_id.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.email_id.$invalid && form_vswf.email_id.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								type="email"
+								name="email_id"
+								ng-model="matrimony.email_id"
+								placeholder="Enter Email id"
+								required
+								>
+								<div
+									ng-show="form_vswf.email_id.$error.required && form_vswf.email_id.$dirty"
+									class="alert alert-danger"
+									>
+									Email id is required
+								</div>
+								<div
+									ng-show="form_vswf.email_id.$invalid && form_vswf.email_id.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Email id
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="expectations">Expectation :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.expectations.$valid && form_vswf.expectations.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.expectations.$invalid && form_vswf.expectations.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<textarea
+								class="form-control"
+								name="expectations"
+								ng-model="matrimony.expectations"
+								placeholder="Enter Expectation"
+								required>
+								</textarea>
+								<div
+									ng-show="form_vswf.expectations.$error.required && form_vswf.expectations.$dirty"
+									class="alert alert-danger"
+									>
+									Expectation is required
+								</div>
+								<div
+									ng-show="form_vswf.expectations.$invalid && form_vswf.expectations.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Expectation
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="gaurdians_firstname">Gaurdians First Name:</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf .gaurdians_firstname.$valid && form_vswf .gaurdians_firstname.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf .gaurdians_firstname.$invalid && form_vswf .gaurdians_firstname.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="gaurdians_firstname"
+								ng-model="matrimony.candidates_gaurdian.first_name"
+								placeholder="Enter Gaurdian's First Name"
+								required
+								>
+								<div
+									ng-show="form_vswf .gaurdians_firstname.$error.required && form_vswf .gaurdians_firstname.$dirty"
+									class="alert alert-danger"
+									>
+									Gaurdian's First Name is required
+								</div>
+								<div
+									ng-show="form_vswf .gaurdians_firstname.$invalid && form_vswf .gaurdians_firstname.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Gaurdian's First Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="gaurdians_middlename">Gaurdians Middle Name:</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf .gaurdians_middlename.$valid && form_vswf .gaurdians_middlename.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf .gaurdians_middlename.$invalid && form_vswf .gaurdians_middlename.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="gaurdians_middlename"
+								ng-model="matrimony.candidates_gaurdian.middle_name"
+								placeholder="Enter Gaurdian's Middle Name"
+								required
+								>
+								<div
+									ng-show="form_vswf .gaurdians_middlename.$error.required && form_vswf .gaurdians_middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Gaurdian's Middle Name is required
+								</div>
+								<div
+									ng-show="form_vswf .gaurdians_middlename.$invalid && form_vswf .gaurdians_middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Gaurdian's Middle Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="gaurdians_lastname">Gaurdians Last Name:</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf .gaurdians_lastname.$valid && form_vswf .gaurdians_lastname.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf .gaurdians_lastname.$invalid && form_vswf .gaurdians_lastname.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="gaurdians_lastname"
+								ng-model="matrimony.candidates_gaurdian.last_name"
+								placeholder="Enter Gaurdian's Middle Name"
+								required
+								>
+								<div
+									ng-show="form_vswf .gaurdians_lastname.$error.required && form_vswf .gaurdians_lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Gaurdian's Last Name is required
+								</div>
+								<div
+									ng-show="form_vswf .gaurdians_lastname.$invalid && form_vswf .gaurdians_lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Gaurdian's Last Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="address_residential">Residential Address :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.address_residential.$valid && form_vswf.address_residential.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.address_residential.$invalid && form_vswf.address_residential.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<textarea
+								class="form-control"
+								name="address_residential"
+								ng-model="matrimony.address_residential"
+								placeholder="Enter Residential Address"
+								required
+								>
+								</textarea>
+								<div
+									ng-show="form_vswf.address_residential.$error.required && form_vswf.address_residential.$dirty"
+									class="alert alert-danger"
+									>
+									Residential Address is required
+								</div>
+								<div
+									ng-show="form_vswf.address_residential.$invalid && form_vswf.address_residential.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Residential Address
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="mobile_no_home">Mobile no(resi.) :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.mobile_no_home.$valid && form_vswf.mobile_no_home.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.mobile_no_home.$invalid && form_vswf.mobile_no_home.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="mobile_no_home"
+								ng-model="matrimony.mobile_no_home"
+								placeholder="Enter Mobile no(resi.)"
+								required
+								data-ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/"
+								>
+								<div
+									ng-show="form_vswf.mobile_no_home.$error.required && form_vswf.mobile_no_home.$dirty"
+									class="alert alert-danger"
+									>
+									Mobile no(resi.) is required
+								</div>
+								<div
+									ng-show="form_vswf.mobile_no_home.$invalid && form_vswf.mobile_no_home.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Mobile no(resi.)
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="home_town">Home town :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.home_town.$valid && form_vswf.home_town.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.home_town.$invalid && form_vswf.home_town.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="home_town"
+								ng-model="matrimony.home_town"
+								placeholder="Enter Home town"
+								required
+								>
+								<div
+									ng-show="form_vswf.home_town.$error.required && form_vswf.home_town.$dirty"
+									class="alert alert-danger"
+									>
+									Home town is required
+								</div>
+								<div
+									ng-show="form_vswf.home_town.$invalid && form_vswf.home_town.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Home town
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="uncle_firstname">Uncle's First Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.uncle_firstname.$valid && form_vswf.uncle_firstname.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.uncle_firstname.$invalid && form_vswf.uncle_firstname.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="uncle_firstname"
+								ng-model="matrimony.candidates_uncle.first_name"
+								placeholder="Enter Uncle's First Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.uncle_firstname.$error.required && form_vswf.uncle_firstname.$dirty"
+									class="alert alert-danger"
+									>
+									Uncle's First Name is required
+								</div>
+								<div
+									ng-show="form_vswf.uncle_firstname.$invalid && form_vswf.uncle_firstname.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Uncle's First Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="uncle_middlename">Uncle's Middle Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.uncle_middlename.$valid && form_vswf.uncle_middlename.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.uncle_middlename.$invalid && form_vswf.uncle_middlename.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="uncle_middlename"
+								ng-model="matrimony.candidates_uncle.middle_name"
+								placeholder="Enter Uncle's Middle Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.uncle_middlename.$error.required && form_vswf.uncle_middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Uncle's Middle Name is required
+								</div>
+								<div
+									ng-show="form_vswf.uncle_middlename.$invalid && form_vswf.uncle_middlename.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Uncle's Middle Name
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-4">
+								<label for="uncle_lastname">Uncle's Last Name :</label>
+								<div
+									class="text-success glyphicon glyphicon-ok form-control-feedback"
+									ng-show="form_vswf.uncle_lastname.$valid && form_vswf.uncle_lastname.$dirty"
+								></div>
+								<div
+									class="text-danger glyphicon glyphicon-remove form-control-feedback"
+									ng-show="form_vswf.uncle_lastname.$invalid && form_vswf.uncle_lastname.$dirty"
+								></div>
+							</div>
+							<div class="col-md-8">
+								<!-- type="date"  -->
+								<!-- type="number"  -->
+								<input
+								class="form-control"
+								name="uncle_lastname"
+								ng-model="matrimony.candidates_uncle.last_name"
+								placeholder="Enter Uncle's Last Name"
+								required
+								>
+								<div
+									ng-show="form_vswf.uncle_lastname.$error.required && form_vswf.uncle_lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Uncle's Last Name is required
+								</div>
+								<div
+									ng-show="form_vswf.uncle_lastname.$invalid && form_vswf.uncle_lastname.$dirty"
+									class="alert alert-danger"
+									>
+									Enter Valid Uncle's Last Name
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label>Preferences:</label>
+							</div>
+							<div class="col-md-8">
+								<div class = "row">
+									<div class = "col-md-4">
+										<label>
+											<input
+											type="checkbox"
+											name="sutar"
+											ng-model="matrimony.preferences[0].state"
+											>
+											Sutar
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label>
+											<input
+											type="checkbox"
+											name="sonar"
+											ng-model="matrimony.preferences[1].state"
+											>
+											Sonar
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label>
+											<input
+											type="checkbox"
+											name="lohar"
+											ng-model="matrimony.preferences[2].state"
+											>
+											Lohar
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label>
+											<input
+											type="checkbox"
+											name="shilpkar"
+											ng-model="matrimony.preferences[3].state"
+											>
+											Shilpkar
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label>
+											<input
+											type="checkbox"
+											name="tamrakar"
+											ng-model="matrimony.preferences[4].state"
+											>
+											Tamrakar
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-offset-5">
+								<button
+								type = "submit"
+								class = "btn btn-primary "
+								ng-click = "update_candidate_details(matrimony._id,matrimony);"
+								>Update
+								</button>
+							</div>
+						</div>
+					</form>
+				<pre>{{matrimony | json}}</pre>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
