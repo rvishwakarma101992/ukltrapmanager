@@ -2,9 +2,11 @@
 
 angular
 .module('inspinia')
-.controller('controller_add_trap', ['$scope', 'service_ukl_traps','$state', controller_add_trap])
+.controller('controller_add_trap', ['$scope', 'service_ukl_traps','$state','$rootScope', controller_add_trap])
 ;
-function controller_add_trap($scope, service_ukl_traps, $state){
+function controller_add_trap($scope, service_ukl_traps, $state, $rootScope){
+
+	var my_project_id= $rootScope.project_id;
 
 	$scope.reset_form = function(){
 		$scope.new_trap = {
@@ -33,6 +35,7 @@ function controller_add_trap($scope, service_ukl_traps, $state){
 
 	$scope.submit_form = function(coming_object){
 		alert(JSON.stringify(coming_object));
+		$scope.get_project_id = $rootScope.project_id;
 
 		var M = coming_object.outlet_pressure_in_bar;
 		var L = coming_object.bypass_open_close;
@@ -41,7 +44,8 @@ function controller_add_trap($scope, service_ukl_traps, $state){
 		var status;
 
 
-		console.log( M +""+ L +""+ N +""+ op);
+		// console.log( M +""+ L +""+ N +""+ op);
+		// console.log(my_project_id);
 
 		
 		
@@ -255,7 +259,9 @@ function controller_add_trap($scope, service_ukl_traps, $state){
 			"out_temp_read": coming_object.out_temp_read,
 			"bypass_exists": coming_object.bypass_exists,
 			"application": coming_object.application,
-			"status": status
+			"status": status,
+			"project_id": my_project_id
+
 		
 			};
 
@@ -265,16 +271,14 @@ function controller_add_trap($scope, service_ukl_traps, $state){
 		service_ukl_traps.create(my_object)
 		.then(
 			function on_success(response){
-				swal({
-					title: "Success!", 
-					text: "Record created successfully!", 
-					type: "success"
-				});
-				$state.go("company_pages.all_traps");
+				// swal({
+				// 	title: "Success!", 
+				// 	text: "Record created successfully!", 
+				// 	type: "success"
+				// });
+				alert("Trap added successfully");
 		    	console.log("ON SUCCESS: " + response.data);
-
-		    	$scope.reset_form();
-		    	$state.go("company_pages.all_traps");
+				$state.go("company_pages.all_traps");
 
 			}, 
 			function on_error(response){

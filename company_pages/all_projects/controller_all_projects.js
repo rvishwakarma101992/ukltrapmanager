@@ -2,15 +2,15 @@
 
 angular
 .module('inspinia')
-.controller('controller_all_projects', ['$scope', 'service_ukl_traps', 'DTOptionsBuilder', 'DTColumnDefBuilder','$rootScope','$state', controller_all_projects])
+.controller('controller_all_projects', ['$scope', 'service_ukl_traps_projects', 'DTOptionsBuilder', 'DTColumnDefBuilder','$rootScope','$state', controller_all_projects])
 ;
-function controller_all_projects($scope, service_ukl_traps, DTOptionsBuilder, DTColumnDefBuilder, $rootScope, $state){
+function controller_all_projects($scope, service_ukl_traps_projects, DTOptionsBuilder, DTColumnDefBuilder, $rootScope, $state){
 
 	$scope.table_folded = true;
 
 	$scope.fetch_all_projects = function(){
 
-		service_ukl_traps.fetch_full_list()
+		service_ukl_traps_projects.fetch_full_list()
 		.then(
 			function on_success(response){
 		    	console.log("ON SUCCESS: " + response.data);
@@ -25,6 +25,57 @@ function controller_all_projects($scope, service_ukl_traps, DTOptionsBuilder, DT
 		);
 	};
 	$scope.fetch_all_projects();
+
+	$scope.all_traps = function(coming_project_id){
+		
+		var project_id = coming_project_id;
+
+		$rootScope.project_id = coming_project_id;
+
+		// console.log(project_id);
+
+		$state.go('company_pages.all_traps')
+
+	}
+
+	$scope.add_trap = function(coming_project_id){
+
+		var project_id = coming_project_id;
+
+		$rootScope.project_id = coming_project_id;
+
+		console.log(project_id);
+
+		$state.go('company_pages.add_trap')
+
+		
+	}
+
+
+	// $scope.fetch_all_traps = function(coming_id){
+
+	// 	service_ukl_traps.fetch_full_list(coming_id)
+	// 	.then(
+	// 		function on_success(response){
+	// 	    	console.log("ON SUCCESS: " + response.data);
+	// 	    	$scope.list_traps = response.data;
+	// 	    			// alert(JSON.stringify(response.data));
+
+
+	// 		}, 
+	// 		function on_error(response){
+	// 			console.log("ON ERROR: " + response.statusText);
+	// 		}
+	// 	);
+	// };
+	// $scope.fetch_all_traps();
+
+
+
+
+
+
+
 
 	// $scope.rectify_trap = function (coming_object) {
 	// 	// alert("in edit");
@@ -47,6 +98,7 @@ function controller_all_projects($scope, service_ukl_traps, DTOptionsBuilder, DT
 	// 		);
 
 	// }
+ 	
 
 
 
@@ -66,7 +118,7 @@ function controller_all_projects($scope, service_ukl_traps, DTOptionsBuilder, DT
 
   				swal("Deleted!", "trap details has been deleted.", "success");
 
-		service_ukl_traps.delete_by_id(coming_id)
+		service_ukl_traps_projects.delete_by_id(coming_id)
 		.then(
 			function on_success(response){
 		    	console.log("ON SUCCESS: " + response.data);

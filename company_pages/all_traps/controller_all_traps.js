@@ -8,9 +8,30 @@ function controller_all_traps($scope, service_ukl_traps, DTOptionsBuilder, DTCol
 
 	$scope.table_folded = true;
 
-	$scope.fetch_all_traps = function(){
+	var view_project_id = $rootScope.project_id
+	// $scope.fetch_all_traps = function(){
 
-		service_ukl_traps.fetch_full_list()
+	// 	// console.log(view_project_id);
+	// 	service_ukl_traps.fetch_full_list()
+	// 	.then(
+	// 		function on_success(response){
+	// 	    	console.log("ON SUCCESS: " + response.data);
+	// 	    	$scope.list_traps = response.data;
+	// 	    			// alert(JSON.stringify(response.data));
+
+
+	// 		}, 
+	// 		function on_error(response){
+	// 			console.log("ON ERROR: " + response.statusText);
+	// 		}
+	// 	);
+	// };
+	// $scope.fetch_all_traps();
+
+	$scope.fetch_traps_by_id = function(view_project_id){
+
+		// console.log(view_project_id);
+		service_ukl_traps.fetch_by_id(view_project_id)
 		.then(
 			function on_success(response){
 		    	console.log("ON SUCCESS: " + response.data);
@@ -24,7 +45,7 @@ function controller_all_traps($scope, service_ukl_traps, DTOptionsBuilder, DTCol
 			}
 		);
 	};
-	$scope.fetch_all_traps();
+	$scope.fetch_traps_by_id(view_project_id);
 
 	$scope.rectify_trap = function (coming_object) {
 		// alert("in edit");
@@ -68,8 +89,7 @@ function controller_all_traps($scope, service_ukl_traps, DTOptionsBuilder, DTCol
 		.then(
 			function on_success(response){
 		    	console.log("ON SUCCESS: " + response.data);
-		    	$scope.fetch_all_traps();
-			}, 
+			$scope.fetch_traps_by_id(view_project_id);			}, 
 			function on_error(response){
 				console.log("ON ERROR: " + response.statusText);
 			}

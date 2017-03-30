@@ -32,8 +32,8 @@ function controller_rectify_trap($scope, service_ukl_traps, $rootScope, $state){
 					});
 					console.log(response);
 			    	console.log("ON SUCCESS: " + response.data);
-			    	$scope.form_add_trap.$setUntouched();
-					$scope.form_add_trap.$setPristine();
+			  //   	$scope.form_add_trap.$setUntouched();
+					// $scope.form_add_trap.$setPristine();
 			    	$state.go('company_pages.all_traps');
 				}, 
 				function on_error(response){

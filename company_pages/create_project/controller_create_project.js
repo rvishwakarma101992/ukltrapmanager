@@ -2,9 +2,9 @@
 
 angular
 .module('inspinia')
-.controller('controller_create_project', ['$scope', 'service_ukl_traps','$state', controller_create_project])
+.controller('controller_create_project', ['$scope', 'service_ukl_traps_projects','$state', controller_create_project])
 ;
-function controller_create_project($scope, service_ukl_traps, $state){
+function controller_create_project($scope, service_ukl_traps_projects, $state){
 
 	$scope.reset_form = function(){
 		$scope.new_trap = {
@@ -262,7 +262,7 @@ function controller_create_project($scope, service_ukl_traps, $state){
 		
 		
 
-		service_ukl_traps.create(coming_object)
+		service_ukl_traps_projects.create(coming_object)
 		.then(
 			function on_success(response){
 				swal({

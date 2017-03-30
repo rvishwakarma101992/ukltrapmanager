@@ -1,5 +1,5 @@
 function routes_demo($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/company_pages/all_traps");
+    $urlRouterProvider.otherwise("/company_pages/create_project");
     $stateProvider
     .state('company_pages', {
         abstract: true,

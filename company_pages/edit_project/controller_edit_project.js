@@ -2,9 +2,9 @@
 
 angular
 .module('inspinia')
-.controller('controller_edit_project', ['$scope', 'service_ukl_traps','$state', controller_edit_project])
+.controller('controller_edit_project', ['$scope', 'service_ukl_traps_projects','$state', controller_edit_project])
 ;
-function controller_edit_project($scope, service_ukl_traps, $state){
+function controller_edit_project($scope, service_ukl_traps_projects, $state){
 
 	$scope.reset_form = function(){
 		$scope.new_trap = {
@@ -30,7 +30,7 @@ function controller_edit_project($scope, service_ukl_traps, $state){
 	$scope.reset_form();
 
 	$scope.update_project = function(coming_id,coming_object){
-		service_ukl_traps.update_by_id(coming_id, coming_object)
+		service_ukl_traps_projects.update_by_id(coming_id, coming_object)
 			.then(
 				function on_success(response){
 					swal({

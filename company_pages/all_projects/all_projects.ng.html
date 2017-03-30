@@ -99,6 +99,32 @@
 									<span class="glyphicon glyphicon-trash"></span>
 								</button>
 							</span>
+
+							<span data-placement="top" data-toggle="tooltip" title="Add">
+								<button 
+									class="btn btn-primary btn-xs" 
+									
+									
+									data-target="#add_trap" 
+									ng-click="add_trap(each_project._id);"
+								>
+								Add Traps
+								</button>
+							</span>
+							</div>
+						
+
+						<span data-placement="top" data-toggle="tooltip" title="Add">
+								<button 
+									class="btn btn-primary btn-xs" 
+									
+									
+									data-target="#add_trap" 
+									ng-click="all_traps(each_project._id);"
+								>
+								View Traps
+								</button>
+							</span>
 							</div>
 						</td>
 						<td>{{each_project.project_name}}</td>
